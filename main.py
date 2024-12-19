@@ -18,6 +18,8 @@ while True:
    
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     #detects faces
+    cv2.putText(frame, "press q to exit", (int(frame_width*0.65), int(frame_height*0.85)), fontFace=3, fontScale=1.5, color=(0,0,255), thickness=3)
+
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
     for (x,y,w,h) in faces:
         cv2.rectangle(frame, (x,y), (x+w,y+h), (255,0,0), 3)
